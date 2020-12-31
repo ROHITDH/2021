@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+
+		<style type="text/css">
+			#target{
+    position:absolute;
+    top:-3500px;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:hidden;
+    font-size:100px;
+    text-align:center;
+    font-family:sans-serif;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+#target>div{
+    padding-top:3500px;
+    animation:autoscroll 1000s linear;
+}
+html:after{
+    content:'';
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:linear-gradient(top,rgba(0,0,0,1),rgba(0,0,0,0) 100%);
+    background:linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0) 100%);
+    pointer-events:none;
+}
+
+body{
+    
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    transform-origin:50% 100%;
+    transform:perspective(300px) rotateX(20deg);
+}
+html{
+    color:yellow;
+    background:black;
+}
+@keyframes autoscroll{
+    to{
+        margin-top:-50000px;
+    }    
+}
+		</style>
+	</head>
+
+	<body>
+<div id="target">
+	<div>   
+		WISH YOU<br>
+		HAPPY NEW YEAR!!
+
+    </div>
+</div>
+<video autoplay muted loop id="myVideo" width="100%" height="auto" >
+  <source src="dvr.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+ <embed src="a.mp3" loop="true" autostart="true" width="2" height="0">
+<audio src="a.mp3">
+<p>If you are reading this, it is because your browser does not support the audio element.     </p>
+</audio>
+	</body>
+</html>
